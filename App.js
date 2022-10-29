@@ -17,92 +17,71 @@ import {
   useColorScheme,
   View,
   Button,
+  NativeModules,
 } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const Stack = createNativeStackNavigator();
 
-/* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
- * LTI update could not be added via codemod */
-const Section = ({children, title, dark}): Node => {
-  const isDarkMode = dark;
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? 'magenta' : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
+const {ZolozKit} = NativeModules;
+const BASE_URL = 'http://10.0.2.2';
+// console.log(ZLZ_CHAMELEON_KEY);
+
+const HomeScreen = ({navigation}) => {
+  return <></>;
 };
 
-const App: () => Node = () => {
-  const [theme, setTheme] = useState(true);
-  const [isDarkMode, setDarkMode] = useState(true);
-  // const isDarkMode = useColorScheme() === 'dark';
+// const ProfileScreen = ({navigation, route}) => {
+//   return <Text>This is {route.params.name}'s profile</Text>;
+// };
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+const App = () => {
+  const [metaInfo, setMetaInfo] = useState();
+
+  ZolozKit.getMetaInfo(metainfo => {
+    setMetaInfo(metainfo);
+  });
+
+  const faceCapture = async () => {
+    try {
+      const url = BASE_URL + '/api/facecapture/initialize';
+      const options = {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          metaInfo: metaInfo,
+          serviceLevel: 'FACECAPTURE0002',
+        }),
+      };
+      const response = await fetch(url, options);
+      const data = await response.json();
+      for (var key in data) {
+        console.log(key, data[key]);
+      }
+      ZolozKit.start(
+        data.clientCfg,
+        {
+          ZLZ_LOCAL_KEY: 'en-US',
+        },
+        result => {
+          console.log(result);
+        },
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        {/* <Header /> */}
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section dark={isDarkMode} title="Step Zero">
-            <Button
-              onPress={() => {
-                setDarkMode(!isDarkMode);
-              }}
-              title="Press"
-            />
-          </Section>
-          <Section dark={isDarkMode} title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits. Why
-          </Section>
-          <Section dark={isDarkMode} title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section dark={isDarkMode} title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section dark={isDarkMode} title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <ScrollView contentInsetAdjustmentBehavior="automatic">
+      <View>
+        <Button title="Face ID" onPress={faceCapture} />
+      </View>
+    </ScrollView>
   );
 };
 
