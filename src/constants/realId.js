@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-
 const realIdLevel = [
   {
     name: 'REALID0001',
