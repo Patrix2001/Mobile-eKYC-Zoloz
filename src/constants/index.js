@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import docTypes from './docTypes';
 import captureLevel from './captureLevel';
 import recognitionLevel from './recognitionLevel';

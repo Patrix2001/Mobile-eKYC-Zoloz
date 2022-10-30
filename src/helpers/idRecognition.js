@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import {ID_RECOGNITION_INIT, ID_RECOGNITION_RESULT} from '../constants';
 
 const IdRecognition = () => {

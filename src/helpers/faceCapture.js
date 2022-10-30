@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import {FACECAPTURE_INIT, FACECAPTURE_RESULT} from '../constants';
 
 const FaceCapture = () => {

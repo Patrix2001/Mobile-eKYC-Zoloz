@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import {REAL_ID_INIT, REAL_ID_RESULT} from '../constants';
 
 const RealId = () => {

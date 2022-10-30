@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 const recognitionLevel = [
   {
     name: 'IDRECOGNITION0002',

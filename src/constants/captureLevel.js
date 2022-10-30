@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 const captureLevel = [
   {
     name: 'FACECAPTURE0001',

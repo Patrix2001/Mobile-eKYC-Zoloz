@@ -12,13 +12,10 @@ export default StyleSheet.create({
     paddingTop: Dimensions.get('window').width * 0.07,
     paddingHorizontal: Dimensions.get('window').width * 0.05,
   },
-  headingOne: {
+  heading: {
     fontSize: 24,
     fontWeight: '600',
     color: 'black',
-  },
-  sectionCitation: {
-    flexDirection: 'row',
   },
   sectionMenuButton: {
     flex: 0.2,

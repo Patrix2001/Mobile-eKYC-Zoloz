@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 const docTypes = [
   {
     country: 'All countries',

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 const BASE_URL_API = 'http://127.0.0.1';
 
 const REAL_ID_INIT = `${BASE_URL_API}/api/realid/initialize`;
