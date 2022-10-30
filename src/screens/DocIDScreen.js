@@ -1,17 +1,18 @@
-import {Text, View} from 'react-native';
+import {ScrollView, View} from 'react-native';
+import styles from '../styles';
+import IntroFeatureLayout from '../components/templates/IntroFeatureLayout';
 
-const DocIDScreen = ({ navigation }) => {
+const DocIDScreen = ({navigation}) => {
   return (
-    <>
-      <View
-        style={{
-          height: '100%',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Text style={{fontSize: 20, color: '#000'}}>Doc ID</Text>
+    <ScrollView>
+      <View style={styles.subMain}>
+        <IntroFeatureLayout
+          content="ZOLOZ ID recognition provides the Optical Character Recognition (OCR) functionality for most of documents like passport, ID card and driving license, etc., along with the anti-spoofing results for the documents."
+          link="https://docs.zoloz.com/zoloz/saas/apireference/utcp2w"
+          source="ZOLOZ Documentation - ID recognition"
+        />
       </View>
-    </>
+    </ScrollView>
   );
 };
 

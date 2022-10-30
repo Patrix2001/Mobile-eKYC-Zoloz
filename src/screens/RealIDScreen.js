@@ -1,22 +1,18 @@
-import {Button, Text, View} from 'react-native';
+import {ScrollView, View} from 'react-native';
+import styles from '../styles';
+import IntroFeatureLayout from '../components/templates/IntroFeatureLayout';
 
 const RealIDScreen = ({navigation}) => {
   return (
-    <>
-      <View
-        style={{
-          height: '100%',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Text style={{fontSize: 20, color: '#000'}}>Real ID</Text>
-        <Button
-          title="User Profile"
-          color="#0ca8e6"
-          onPress={() => navigation.replace('Profile', {name: 'Jane'})}
+    <ScrollView>
+      <View style={styles.subMain}>
+        <IntroFeatureLayout
+          content="ZOLOZ Real ID provides a digital online solution for KYC (Know Your Customer). It implements an identity proofing process, which involves multiple capabilities of document verification, face verification and risk control."
+          link="https://docs.zoloz.com/zoloz/saas/apireference/realid"
+          source="ZOLOZ Documentation - Real ID"
         />
       </View>
-    </>
+    </ScrollView>
   );
 };
 

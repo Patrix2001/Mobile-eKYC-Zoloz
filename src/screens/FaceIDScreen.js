@@ -1,24 +1,18 @@
-import {View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import styles from '../styles';
-import Citation from '../components/organisms/Citation';
-import Article from '../components/organisms/Article';
+import IntroFeatureLayout from '../components/templates/IntroFeatureLayout';
 
 const FaceIDScreen = ({navigation}) => {
   return (
-    <>
+    <ScrollView>
       <View style={styles.subMain}>
-        <View>
-          <Article title="Description">
-            ZOLOZ Face Capture provides a digital online solution for capturing
-            a user's selfie. It implements a face capture process that involves
-            face liveness and face quality checks.
-          </Article>
-          <Citation link="https://docs.zoloz.com/zoloz/saas/apireference/facecapture">
-            ZOLOZ Documentation - Face capture
-          </Citation>
-        </View>
+        <IntroFeatureLayout
+          content="ZOLOZ Face Capture provides a digital online solution for capturing a user's selfie. It implements a face capture process that involves face liveness and face quality checks."
+          link="https://docs.zoloz.com/zoloz/saas/apireference/facecapture"
+          source="ZOLOZ Documentation - Face capture"
+        />
       </View>
-    </>
+    </ScrollView>
   );
 };
 

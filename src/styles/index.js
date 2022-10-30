@@ -11,6 +11,7 @@ export default StyleSheet.create({
     backgroundColor: 'white',
     paddingTop: Dimensions.get('window').width * 0.07,
     paddingHorizontal: Dimensions.get('window').width * 0.05,
+    paddingBottom: Dimensions.get('window').width * 0.3,
   },
   heading: {
     fontSize: 24,
