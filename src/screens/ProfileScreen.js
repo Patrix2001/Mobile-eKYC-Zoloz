@@ -15,6 +15,7 @@ const ProfileScreen = ({navigation, route}) => {
         const response = await IdRecognition().result(transactionId);
       } else if (code === 3) {
         const response = await RealId().result(transactionId);
+        
       } else if (code === 4) {
       } else {
         navigation.dispatch(popAction);

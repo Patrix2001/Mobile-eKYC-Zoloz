@@ -1,7 +1,11 @@
 import {ID_RECOGNITION_INIT, ID_RECOGNITION_RESULT} from '../constants';
 
 const IdRecognition = () => {
-  const init = async (metaInfo, docType, serviceLevel) => {
+  const init = async (
+    metaInfo,
+    docType = '00620000001',
+    serviceLevel = 'IDRECOGNITION0002',
+  ) => {
     try {
       const url = ID_RECOGNITION_INIT;
       const options = {

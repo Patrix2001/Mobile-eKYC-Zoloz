@@ -22,7 +22,6 @@ const FaceIDScreen = ({navigation}) => {
             title="Start"
             onPress={async () => {
               const result = await FaceCapture().init(metaInfo);
-              console.log(result)
               const clientCfg = result.clientCfg;
               const id = result.transactionId;
               
