@@ -1,4 +1,4 @@
-const BASE_URL_API = 'http://127.0.0.1';
+const BASE_URL_API = '';
 
 const REAL_ID_INIT = `${BASE_URL_API}/api/realid/initialize`;
 const REAL_ID_RESULT = `${BASE_URL_API}/api/realid/result`;

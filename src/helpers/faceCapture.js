@@ -1,7 +1,7 @@
 import {FACECAPTURE_INIT, FACECAPTURE_RESULT} from '../constants';
 
 const FaceCapture = () => {
-  const init = async (metaInfo, serviceLevel) => {
+  const init = async (metaInfo, serviceLevel = 'FACECAPTURE0002') => {
     try {
       const url = FACECAPTURE_INIT;
       const options = {
