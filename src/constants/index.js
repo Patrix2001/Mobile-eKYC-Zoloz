@@ -1,5 +1,6 @@
 import docTypes from './docTypes';
 import captureLevel from './captureLevel';
+import connnectLevel from './connectLevel';
 import recognitionLevel from './recognitionLevel';
 import {realIdLevel, operationMode} from './realId';
 import {
@@ -25,6 +26,7 @@ export {
   ID_RECOGNITION_INIT,
   ID_RECOGNITION_RESULT,
   captureLevel,
+  connnectLevel,
   docTypes,
   recognitionLevel,
   realIdLevel,
