@@ -25,7 +25,7 @@ const ProfileScreen = ({navigation, route}) => {
   }, []);
   
   return (
-    <>
+    <ScrollView>
       <View
         style={{
           height: '100%',
@@ -35,7 +35,7 @@ const ProfileScreen = ({navigation, route}) => {
         <Text style={{fontSize: 20, color: '#000'}}>Profile</Text>
         <Text>{transactionId}</Text>
       </View>
-    </>
+    </ScrollView>
   );
 };
 

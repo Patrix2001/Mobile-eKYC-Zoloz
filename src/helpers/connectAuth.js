@@ -3,8 +3,8 @@ import {CONNECT_INIT, CONNECT_RESULT} from '../constants';
 const ConnectAuth = () => {
   const init = async (
     metaInfo,
-    sceneCode = 'Testing Login',
     serviceLevel = 'CONNECT0001',
+    sceneCode = 'Testing Login',
   ) => {
     try {
       const url = CONNECT_INIT;

@@ -1,9 +1,9 @@
 const captureLevel = [
-  {
-    name: 'FACECAPTURE0001',
-    description:
-      'the ZOLOZ server performs basic liveness check, and with no detection method used.',
-  },
+  // {
+  //   name: 'FACECAPTURE0001',
+  //   description:
+  //     'the ZOLOZ server performs basic liveness check, and with no detection method used.',
+  // },
   {
     name: 'FACECAPTURE0002',
     description:

@@ -1,12 +1,18 @@
 import {Button, ScrollView, View, NativeModules} from 'react-native';
 import {useState} from 'react';
+import {Picker} from '@react-native-picker/picker';
 import styles from '../styles';
+import TextParagraph from '../components/atoms/TextParagraph';
 import IntroFeatureLayout from '../components/templates/IntroFeatureLayout';
 import {ConnectAuth} from '../helpers';
 const {ZolozKit} = NativeModules;
+import {connnectLevel} from '../constants';
 
 const AuthScreen = ({navigation}) => {
   const [metaInfo, setMetaInfo] = useState();
+  const [level, setLevel] = useState();
+  const [desc, setDesc] = useState('');
+
   ZolozKit.getMetaInfo(metainfo => setMetaInfo(metainfo));
 
   return (
@@ -17,12 +23,31 @@ const AuthScreen = ({navigation}) => {
           link="https://docs.zoloz.com/zoloz/saas/apireference/connect"
           source="ZOLOZ Documentation - Connect"
         />
+        <View>
+          <Picker
+            selectedValue={level}
+            mode={'dialog'}
+            onValueChange={(item, idx) => {
+              if (idx !== 0) {
+                setLevel(item);
+                setDesc(connnectLevel[idx - 1].description);
+              } else {
+                setLevel();
+                setDesc('');
+              }
+            }}>
+            <Picker.Item label="Service Level" value="" />
+            {connnectLevel.map((arr, idx) => (
+              <Picker.Item key={idx} label={arr.name} value={arr.name} />
+            ))}
+          </Picker>
+          <TextParagraph>{desc}</TextParagraph>
+        </View>
         <View style={{marginTop: 30}}>
           <Button
             title="Start"
             onPress={async () => {
-              const result = await ConnectAuth().init(metaInfo);
-              console.log(result)
+              const result = await ConnectAuth().init(metaInfo, level);
               const clientCfg = result.clientCfg;
               const id = result.transactionId;
 
