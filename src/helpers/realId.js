@@ -1,7 +1,12 @@
 import {REAL_ID_INIT, REAL_ID_RESULT} from '../constants';
 
 const RealId = () => {
-  const init = async (metaInfo, docType, serviceLevel, operationMode) => {
+  const init = async (
+    metaInfo,
+    docType = '00620000001',
+    serviceLevel = 'REALID0001',
+    operationMode = 'STANDARD',
+  ) => {
     try {
       const url = REAL_ID_INIT;
       const options = {
