@@ -4,6 +4,8 @@ import recognitionLevel from './recognitionLevel';
 import {realIdLevel, operationMode} from './realId';
 import {
   BASE_URL_API,
+  CONNECT_INIT,
+  CONNECT_RESULT,
   REAL_ID_INIT,
   REAL_ID_RESULT,
   FACECAPTURE_INIT,
@@ -14,6 +16,8 @@ import {
 
 export {
   BASE_URL_API,
+  CONNECT_INIT,
+  CONNECT_RESULT,
   REAL_ID_INIT,
   REAL_ID_RESULT,
   FACECAPTURE_INIT,

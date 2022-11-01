@@ -8,6 +8,7 @@ const {ZolozKit} = NativeModules;
 const RealIDScreen = ({navigation}) => {
   const [metaInfo, setMetaInfo] = useState();
   ZolozKit.getMetaInfo(metainfo => setMetaInfo(metainfo));
+  
   return (
     <ScrollView>
       <View style={styles.subMain}>

@@ -7,6 +7,7 @@ const popAction = StackActions.pop(1);
 
 const ProfileScreen = ({navigation, route}) => {
   const {transactionId, code} = route.params;
+
   useEffect(() => {
     const checkResult = async () => {
       if (code === 1) {
@@ -22,6 +23,7 @@ const ProfileScreen = ({navigation, route}) => {
     };
     checkResult();
   }, []);
+  
   return (
     <>
       <View
