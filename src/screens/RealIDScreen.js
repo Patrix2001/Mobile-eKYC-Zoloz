@@ -80,7 +80,7 @@ const RealIDScreen = ({navigation}) => {
                 setDescOperation('');
               }
             }}>
-            <Picker.Item label="Service Level" value="" />
+            <Picker.Item label="Operation Mode" value="" />
             {operationMode.map((arr, idx) => (
               <Picker.Item key={idx} label={arr.name} value={arr.name} />
             ))}

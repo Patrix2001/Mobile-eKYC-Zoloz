@@ -21,6 +21,7 @@ const ConnectAuth = () => {
         }),
       };
       const response = await fetch(url, options);
+      console.log(response)
       const data = await response.json();
       return data;
     } catch (error) {

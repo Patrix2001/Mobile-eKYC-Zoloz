@@ -48,6 +48,7 @@ const AuthScreen = ({navigation}) => {
             title="Start"
             onPress={async () => {
               const result = await ConnectAuth().init(metaInfo, level);
+              console.log(result)
               const clientCfg = result.clientCfg;
               const id = result.transactionId;
 
