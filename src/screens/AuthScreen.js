@@ -47,19 +47,22 @@ const AuthScreen = ({navigation}) => {
           <Button
             title="Start"
             onPress={async () => {
-              const result = await ConnectAuth().init(metaInfo, level);
-              console.log(result)
-              const clientCfg = result.clientCfg;
-              const id = result.transactionId;
+              try {
+                const result = await ConnectAuth().init(metaInfo, level);
+                const clientCfg = result.clientCfg;
+                const id = result.transactionId;
 
-              ZolozKit.start(clientCfg, {}, result => {
-                if (result) {
-                  navigation.replace('Profile', {
-                    transactionId: id,
-                    code: 4,
-                  });
-                }
-              });
+                ZolozKit.start(clientCfg, {}, result => {
+                  if (result) {
+                    navigation.replace('Profile', {
+                      transactionId: id,
+                      code: 4,
+                    });
+                  }
+                });
+              } catch (error) {
+                alert(error)
+              }
             }}
           />
         </View>

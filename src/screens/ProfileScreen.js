@@ -1,4 +1,4 @@
-import {ScrollView, Text, View, Image} from 'react-native';
+import {ScrollView, Text, View, Image, Dimensions} from 'react-native';
 import {StackActions} from '@react-navigation/native';
 import {useState, useEffect} from 'react';
 import styles from '../styles';
@@ -106,7 +106,7 @@ const ProfileScreen = ({navigation, route}) => {
           }}>
           {firstPic ? (
             <Image
-              style={{width: 150, height: 150, marginBottom: 10}}
+              style={{width: Dimensions.get('window').width * 0.5, height: Dimensions.get('window').width * 0.5, marginBottom: 10}}
               source={{
                 uri: `data:image/png;base64,${firstPic}`,
               }}
@@ -116,7 +116,7 @@ const ProfileScreen = ({navigation, route}) => {
           )}
           {secondPic ? (
             <Image
-              style={{width: 150, height: 150}}
+              style={{width: Dimensions.get('window').width * 0.5, height: Dimensions.get('window').width * 0.5}}
               source={{
                 uri: `data:image/png;base64,${secondPic}`,
               }}

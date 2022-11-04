@@ -47,18 +47,22 @@ const FaceIDScreen = ({navigation}) => {
           <Button
             title="Start"
             onPress={async () => {
-              const result = await FaceCapture().init(metaInfo, level);
-              const clientCfg = result.clientCfg;
-              const id = result.transactionId;
+              try {
+                const result = await FaceCapture().init(metaInfo, level);
+                const clientCfg = result.clientCfg;
+                const id = result.transactionId;
 
-              ZolozKit.start(clientCfg, {}, result => {
-                if (result) {
-                  navigation.replace('Profile', {
-                    transactionId: id,
-                    code: 1,
-                  });
-                }
-              });
+                ZolozKit.start(clientCfg, {}, result => {
+                  if (result) {
+                    navigation.replace('Profile', {
+                      transactionId: id,
+                      code: 1,
+                    });
+                  }
+                });
+              } catch (error) {
+                alert(error);
+              }
             }}
           />
         </View>

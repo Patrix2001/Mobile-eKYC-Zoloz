@@ -23,7 +23,7 @@ const DocIDScreen = ({navigation}) => {
           link="https://docs.zoloz.com/zoloz/saas/apireference/utcp2w"
           source="ZOLOZ Documentation - ID recognition"
         />
-                <View>
+        <View>
           <Picker
             selectedValue={doc}
             mode={'dialog'}
@@ -68,18 +68,22 @@ const DocIDScreen = ({navigation}) => {
           <Button
             title="Start"
             onPress={async () => {
-              const result = await IdRecognition().init(metaInfo, doc, level);
-              const clientCfg = result.clientCfg;
-              const id = result.transactionId;
+              try {
+                const result = await IdRecognition().init(metaInfo, doc, level);
+                const clientCfg = result.clientCfg;
+                const id = result.transactionId;
 
-              ZolozKit.start(clientCfg, {}, result => {
-                if (result) {
-                  navigation.replace('Profile', {
-                    transactionId: id,
-                    code: 2,
-                  });
-                }
-              });
+                ZolozKit.start(clientCfg, {}, result => {
+                  if (result) {
+                    navigation.replace('Profile', {
+                      transactionId: id,
+                      code: 2,
+                    });
+                  }
+                });
+              } catch (error) {
+                alert(error);
+              }
             }}
           />
         </View>

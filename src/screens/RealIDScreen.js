@@ -91,18 +91,27 @@ const RealIDScreen = ({navigation}) => {
           <Button
             title="Start"
             onPress={async () => {
-              const result = await RealId().init(metaInfo, doc, level, operation);
-              const clientCfg = result.clientCfg;
-              const id = result.transactionId;
+              try {
+                const result = await RealId().init(
+                  metaInfo,
+                  doc,
+                  level,
+                  operation,
+                );
+                const clientCfg = result.clientCfg;
+                const id = result.transactionId;
 
-              ZolozKit.start(clientCfg, {}, result => {
-                if (result) {
-                  navigation.replace('Profile', {
-                    transactionId: id,
-                    code: 3,
-                  });
-                }
-              });
+                ZolozKit.start(clientCfg, {}, result => {
+                  if (result) {
+                    navigation.replace('Profile', {
+                      transactionId: id,
+                      code: 3,
+                    });
+                  }
+                });
+              } catch (error) {
+                alert(error);
+              }
             }}
           />
         </View>
