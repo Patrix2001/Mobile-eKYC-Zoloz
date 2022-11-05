@@ -1,7 +1,7 @@
 # Mobile-eKYC-Zoloz
 
 ### Description
-This is demonstration for integration Zoloz on Application React Native. For more details, you can check at [here](https://docs.zoloz.com/zoloz/saas/integration/grv4bb)
+This is demonstration for integration ZOLOZ on Application React Native. For more details, you can check at [here](https://docs.zoloz.com/zoloz/saas/integration/grv4bb)
 
 Project uses [react-native-zolozkit](https://www.npmjs.com/package/react-native-zolozkit) package to interact ZOLOZ.
 
