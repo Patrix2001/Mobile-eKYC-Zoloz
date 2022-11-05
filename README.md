@@ -3,6 +3,8 @@
 ### Description
 This is demonstration for integration Zoloz on Application React Native. For more details, you can check at [here](https://docs.zoloz.com/zoloz/saas/integration/grv4bb)
 
+Project uses [react-native-zolozkit](https://www.npmjs.com/package/react-native-zolozkit) package to interact ZOLOZ.
+
 ### Tools
 * [Node js v16.11.1](https://nodejs.org/)
 * [NPM v8.10.0](https://www.npmjs.com/) (packaged by Node js)
