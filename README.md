@@ -42,6 +42,25 @@ info Starting the app on "AV"...
 Starting: Intent { cmp=com.applicationzoloz/.MainActivity }
 ```
 
+### Development Screen's
+
+#### Home Screen
+
+
+
+#### Feature Description
+
+
+
+#### Face ID
+
+
+
+#### Result from System
+
+
+
+
 ### Further Development
 
 * Fixing the Biometric Authentication Connect ZOLOZ

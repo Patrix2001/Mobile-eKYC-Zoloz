@@ -1,4 +1,4 @@
-import {Button, View, StyleSheet} from 'react-native';
+import {Button, View} from 'react-native';
 import styles from '../styles';
 
 const HomeScreen = ({navigation}) => {
@@ -26,11 +26,11 @@ const HomeScreen = ({navigation}) => {
         />
       </View>
       <View style={styles.sectionMenuButton}>
-        <Button
+        {/* <Button
           title="Connect"
           color="#0ca8e6"
           onPress={() => navigation.navigate('Authenticate')}
-        />
+        /> */}
       </View>
     </View>
   );
