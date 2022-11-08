@@ -46,19 +46,22 @@ Starting: Intent { cmp=com.applicationzoloz/.MainActivity }
 
 #### Home Screen
 
-
+<img src="/images/home.png" alt="home" width="200"/>
 
 #### Feature Description
 
-
+<div>
+<img align=top src="/images/face_capture.png" alt="features" width="200"/>
+<img align=top src="/images/selection.png" alt="features" width="200"/>
+</div>
 
 #### Face ID
 
+<img src="/images/zoloz_sdk.png" alt="face id" width="200"/>
 
+#### Result
 
-#### Result from System
-
-
+<img src="/images/result_face.png" alt="drawing" width="200"/>
 
 
 ### Further Development
